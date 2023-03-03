@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 5</title>
+<style>
+    .newpart{
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h1>JavaScript function to extract a specified number of characters from a string.</h1>
+
+    <label for="text">Eneter String:</label>
+    <input type="text" id="para">
+
+    <button type="button" id="result" onclick="showresult()">TRY IT</button>
+    <p id="show"></p>
+
+<script type="text/javascript">
+
+ function showresult(){
+    let newstring = document.getElementById('para').value;
+
+    let part = newstring.slice(5,12);
+    
+    document.getElementById('show').innerHTML = part;
+    part.setAttribute("class", "newpart");
+
+ }
+
+</script>    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="city1"></p><br>
+    <p id="city2"></p><br>
+    <p id="city3"></p><br>
+    <p id="city4"></p><br>
+    <p id="city5"></p><br>
+    <p id="city6"></p><br>
+<script type="text/javascript">
+
+const city = ["Ahmedabad","Surat","Gandhinagar","Baroda","Anand"]
+document.getElementById('city1').innerHTML = city;
+
+city.pop();
+document.getElementById('city2').innerHTML = city;
+
+
+city.push("Jamnagar");
+document.getElementById('city3').innerHTML = city;
+
+// city.shift();
+document.getElementById('city4').innerHTML = city.shift();
+document.getElementById('city5').innerHTML = city;
+
+delete city[2];
+document.getElementById('city6').innerHTML = city;
+</script>    
+</body>
+</html>

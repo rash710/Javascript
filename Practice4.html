@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 4</title>
+</head>
+<body>
+    <h1>Write a JavaScript function to split a string and convert it into an array of words.</h1>
+    <p id="text"></p>
+
+    <label for="string" value="string">Please Enter a string to split:</label>
+    <input id="string1" size="50" placeholder="Enter here" style="width: 200px; height: 50px;"><br><br>
+
+    <button type="button" value="OK" onclick="return show()" style="width: 200px; height: 50px;">Show array</button>
+<script> 
+
+    
+
+    function show(){
+        let text1 = document.getElementById('string1').value;
+        
+        const myarray = text1.split(" ");
+
+        text1 = "";
+
+        for(let i = 0; i < myarray.length; i++){
+            text1 += myarray[i] + "<br>"
+        }
+
+        document.getElementById('text').innerHTML = text1;
+    }
+    
+</script>    
+</body>
+</html>
