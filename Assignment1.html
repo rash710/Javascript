@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <style>
+        .newcolor{
+            font-size: x-large;
+            color: green;
+            font-weight: bold;
+        }
+        label
+        {
+            font-size: x-large;
+            font-weight: bold;
+        }
+        button
+        {
+            width: 40%;
+            height: 50px;
+        }
+        form
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        .button
+        {
+            display: flex;
+            justify-content: space-between;
+                
+        }
+        .demo{
+            height: 50px;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body style="margin:100px;">
+    <form id="resetall">
+   
+    <label for="fnum">Please Enter First Number:</label>
+    <input type="number" id="fnum" class="demo"><br>
+   
+    <label for="snum">Please Enter Second Number:</label>
+    <input type="number" id="snum" class="demo"><br><br>
+   
+    <div>
+        <label for="sum">Addition</label>
+        <input type="radio" for="sum" id="sum" name="calc">
+    </div>
+
+   <div>
+    <label for="sub">Subtraction</label>
+    <input type="radio" for="sub" id="sub" name="calc">
+   </div>
+
+    <div>
+        <label for="mul">Multiplication</label>
+        <input type="radio" for="div" id="mul" name="calc">
+    </div>
+
+   <div>
+    <label for="div">Division</label>
+    <input type="radio" for="div" id="div" name="calc">
+   </div><br><br>
+            
+    <div class="button">
+        <button type="button" id="btn" onclick="return dosum()">Calculate</button>
+        <button type="reset" id="reset" onclick="return clear()">Reset</button>
+    </div><br><br>
+    <textarea id="sumresult" style="width:100%; text-align: center; font-size: xx-large;"></textarea>
+    
+    </form>  
+
+<script type="text/javascript">
+
+
+     function dosum(){
+
+        let first = parseInt(document.getElementById('fnum').value);
+        let second = parseInt(document.getElementById('snum').value);
+
+        let sumis = first + second;
+        let subis = first - second;
+        let mulis = first * second;
+        let divis = first / second;
+        
+        
+         if(document.getElementById('sum').checked){
+            document.getElementById('sumresult').innerHTML = "The Addition is: " + sumis;  
+         }
+
+         if(document.getElementById('sub').checked){
+            document.getElementById('sumresult').innerHTML = "The Subtraction is: " + subis;
+         }
+
+         if(document.getElementById('mul').checked){
+            document.getElementById('sumresult').innerHTML = "The Multiplication is: " + mulis;
+         }
+
+         if(document.getElementById('div').checked){
+            document.getElementById('sumresult').innerHTML = "The Division is: " + divis;
+         }
+
+         document.getElementById('sumresult').setAttribute("class", "newcolor");  
+
+       
+     }
+
+     function clear(){
+
+        document.getElementById("resetall").reset();
+        
+     }
+</script>
+</body>
+</html>
