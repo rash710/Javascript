@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .table{
+border: 3px solid red;
+
+    }
+</style>    
+</head>
+
+<body>
+    <!-- <p id="demo"></p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Welcome To my page"'>Change text</button>
+    <button type="button" onclick='document.getElementById("demo").style.color= "Red"'>Change color</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, pariatur.</p>
+
+    <button type="button" onclick='document.write(10+20)'>Click</button>
+
+    <p id="dosum"></p>
+    <button type="button" onclick="document.getElementById('dosum').innerHTML = functionsum(10,20,30)">SUM</button>
+<h1>BLock</h1>
+    <p id="show"></p>
+
+    <button type="button" onclick="myfunction()">Click</button>  -->
+
+
+    <!-- <p id="mul"></p> -->
+
+    <!-- <p id="calc"></p>
+
+    <button type="calc" onclick="sum(5,6), sub(5,6), mul (5,6), div(5,6)">Calculate</button>
+
+    <p id="sum"></p>
+    <p id="sub"></p>
+    <p id="mul"></p>
+    <p id="div"></p>
+
+    <p id="state"></p>
+    <p id="objects1"></p>
+     <p id="'cars"></p> -->
+<!-- <input type="text" id="text" placeholder="Enter">
+<p id="replce1">Rashmi Ketan Parmar Rashmi Ketan Parmar Rashmi Ketan Parmar Rashmi Ketan Parmar Rashmi Ketan Parmar</p>
+
+<button onclick="replcethe()">REPLACE</button>
+
+     <p id="date"></p>
+     <button type="button" onclick="Datetoday()">Display Date</button>
+
+
+     <p id="concating"></p>
+     <p id="padded"></p>
+
+     <button type="button" onclick="concatingstr()">CONCAT</button> -->
+<!-- <script> -->
+
+<!-- function Datetoday(){
+
+    document.getElementById('date').innerHTML = new Date();
+}
+
+
+function replcethe(){
+
+    let text1 = document.getElementById('replce1').innerHTML;
+
+    let changeis = text1.replaceAll("Rashmi","Shreeja");
+
+    document.getElementById('replce1').innerHTML = changeis;
+    
+
+}
+
+
+let text2 = "Shreeja";
+let text3 = "Ketan";
+let text4 = "Parmar"
+
+
+let text5 = text2.concat(" ",text3," ",text4);
+
+// document.getElementById('concating').innerHTML = text5;
+
+
+
+function concatingstr(){
+
+    let textvalue = document.getElementById('text').value;
+
+    const arraysplit = textvalue.split(" ");
+
+let text6 = arraysplit[2].concat(" ",arraysplit[1]," ",arraysplit[2]);
+document.getElementById('concating').innerHTML = text6;
+
+//  document.getElementById('padded').innerHTML = textvalue.padStart(textvalue.length += 5,"ketan");
+
+
+document.getElementById('padded').innerHTML = textvalue.charAt(5    );
+
+// let paddevalue = "rashmi";
+// document.getElementById("padded").innerHTML = paddevalue.padStart(7,"x");
+}
+// document.getElementById('demo').innerHTML = "welcome!";
+
+
+//     function myfunction(){
+
+//         document.getElementById('show').innerHTML = 'Hello!';
+//     }
+//     //Array declaration
+//     const state = ["Gujarat", "Maharstara", "Rajsthan", "Uttarpradesh", "Mdhyapradesh"];
+
+// document.getElementById('state').innerHTML = state[1];
+
+//     //Object declaration
+//     const objects1 = {firstname:"Rashmi", lastname:"Parmar", age:28};
+
+//     document.getElementById('objects1').innerHTML = objects1.firstname + "<br>" + objects1.lastname + "  " + objects1.age;
+// //     function functionsum(a,b,c){
+
+// //         return a + b + c;
+
+//     }
+
+// var mul1 = functionmul(10,10);
+
+// document.getElementById('mul').innerHTML = mul1;
+
+//     function functionmul(d,e){
+
+//         return d * e;
+//     }
+  
+
+// const person = {color:"black", 
+//                 type:"volvo", 
+//                 version:"new",
+//                 sow:function(){
+//                     return this.color + " " + this.type;
+//                 }
+//             }
+// document.getElementById('cars').innerHTML = person.sow;
+// function sum(a,b){
+
+//     document.getElementById('sum').innerHTML = a + b;
+
+// }
+
+// function sub(a,b){
+
+// document.getElementById('sub').innerHTML = a - b
+
+// }
+
+// function mul(a,b){
+
+// document.getElementById('mul').innerHTML = a * b;
+
+// }
+
+// function div(a,b){
+
+// document.getElementById('div').innerHTML = a / b;
+
+// }
+
+
+</script>     -->
+
+<p id="tabledemo"></p>
+<p id="timepass"></p>
+<p id="tableoftwo"></p>
+<p id="tableofthree"></p>
+
+<script>
+
+    const states = ["Fruits", "Vegies", "Stuff"];
+
+    const fruits = ["Mango", "Banana", "Apple"];
+    const veggies = ["Potato","Tomato", "Gaurd"];
+    const stuff = ["Soap", "Oil", "Clothes"];
+
+
+text = '<table style="border:3px solid black">'
+
+    for(let i = 0; i < states.length; i++){
+
+        text += '<tr style="border:3px solid black">' + states[i] + "<tr>";
+            text += '<td style="border:3px solid black">' + fruits[i] + "<td>";
+                text += '<td style="border:3px solid black">' + veggies[i] + "<td>";
+                    text +='<td style="border:3px solid black">'+ stuff[i] + "<td>";
+
+    }
+text +="</table>"
+
+document.getElementById('tabledemo').innerHTML = text;
+
+tabledemo.setAttributes = ["clsass","table"];
+
+
+const person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+
+document.getElementById('timepass').innerHTML = person;
+
+
+const numberbeg = [1,2,3,4,5,6,7,8,9,10];
+
+
+let numberone = numberbeg.map(functionone);
+let numbertwo = numberbeg.map(functiontwo);
+
+
+
+function functionone(value, index, array){
+
+return value * 2;
+
+}
+function functiontwo(value, index, array){
+
+    return value * 3;
+}
+document.getElementById('tableoftwo').innerHTML = numberone;
+document.getElementById('tableofthree').innerHTML = numbertwo;  
+</script>
+
+
+
+
+
+</body>
+</html>
