@@ -42,13 +42,14 @@
                 <div><input type="radio" name="gender" id="female"><label class="h6" for="male">Female</label></div>
             </div>
         <label for="designation" class="h5 py-2">Designation</label>
-        <select class="form-control" id="designation" required>
+        <select class="form-control" id="select">
             <option>Select Designation</option>
             <option>Project Manager</option>
             <option>General Manager</option>
             <option>CEO</option>
             <option>Developer</option>
         </select>
+        <p id="blankdesi"></p>
         <label for="salary" class="h5 py-2">Salary</label>
         <input type="number" class="form-control" id="empsalary">
         <p id="blanksalary"></p>
@@ -78,7 +79,7 @@
             <p id="blankmail"></p>
 
             <label for="cnumber" class="h5 py-2">Contact Number</label>
-            <input type="number" class="form-control" id="cnumber">
+            <input type="number" class="form-control" id="cnumber" required>
 
             <div class="d-flex justify-content-center">
                 <button type="submit" onclick="funsubmit()" class="my-4 px-5">SUBMIT</button>
@@ -134,6 +135,12 @@
               blankmail.setAttribute("class","error");
               document.getElementById('blankmail').innerHTML = "Plese Eneter E-mail Address";
             }
+             
+            
+            if(select.options[0].selected == true){
+              blankdesi.setAttribute("class","error");
+              document.getElementById('blankdesi').innerHTML = "Plese Select Designation";
+            }
             
         }
         var stateObject = {
@@ -168,7 +175,7 @@ array.push({"id":printid});
 
 data = "<tr><td>Employee ID</td></tr>";
  console.log(array);
- document.getElementById('locationof').innerHTML = window.location.href;
+ 
 </script>
   </main>
   <footer>
