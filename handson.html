@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands on practice</title>
+</head>
+<body>
+    
+<script type="text/javascript">
+                                                                             // Array Destructuring
+    const course = ["dotnet","java","python"]
+
+    const dotnet = course[0];
+    const java = course[1];
+    const python = course[2];
+
+    console.log(dotnet,java,python);
+
+    const flowers = ["Rose","Lotus","Lily"];
+
+    const [Rose, Lotus, Lily] = flowers;
+
+    console.log(Rose, Lotus, Lily);
+    // If will add  the Element which is not in aaray than it'll show undefined
+    
+
+                                                                                  // Swap Variable
+
+    let first = 'ABC';
+    let second = 'XYZ';
+
+    [second,first] = [first,second];
+
+    console.log(first,second);
+
+                                                                                //Object Destructuring
+
+    const newobject = {
+        name : 'ABC',
+        lname : 'XYZ',
+        country : 'India',
+        location : {
+            state : 'Gujarat',
+            City : 'Surat'
+        }
+    }
+
+    const {name:favname, lname, location:{state}} = newobject;
+    console.log(favname, lname, state);
+
+    
+                                                                                //Function Destructuring
+        function printname(randomone){
+
+            console.log(randomone.location.City);
+        }
+        printname(newobject);
+const stuff = {
+    fruit: 'mango',
+    veg : 'potato',
+}
+    function showstuff({fruit,veg}){
+
+        console.log(fruit,veg);
+    }
+    showstuff(stuff);
+</script>
+</body>
+</html>

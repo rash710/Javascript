@@ -5,6 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head>
+<body>
+    <p class="" id="result"></p>
+ <div class="mb-3">
+   <label for="" class="form-label">First number</label>
+   <input type="text" name="num1" id="num1" class="form-control" placeholder="" aria-describedby="helpId">
+   <small id="helpId" class="text-muted">Help text</small>
+ </div>
+ <div class="mb-3">
+  <label for="" class="form-label">Second Number</label>
+  <input type="text" name="num2" id="num2" class="form-control" placeholder="" aria-describedby="helpId">
+  <small id="helpId" class="text-muted">Help text</small>
+</div>
+<div class="mb-3">
+  <label for="" class="form-label">Second Number</label>
+<input type="button" value="Add" onclick="add(num1,num2)"/ >
+  <small id="helpId" class="text-muted">Help text</small>
+</div>
+
+<p id="display"></p>
+<input type="button" value="Back" onclick="goBack()">
+<input type="button" value="close" onclick="goclose()">
+
+<script>
+    function goBack() {
+  window.history.back()
+}
+     array=[];
+    function add(a,b)
+  {
+    debugger;
+   var num1=parseInt(a.value);
+   var num2=parseInt(b.value);
+   var result=num1+num2;
+  var para= document.getElementById("result");
+  para.innerHTML="<b> Addition is "+result+"</b>";
+ 
+ array.push({"num1":num1,"num2":num2,"result":result});
+ console.log(array);
+data="<tr><td>Num1</td><td>Num2</td><td>result</td></tr><tr>";
+ for(i=0;i<array.length;i++)
+ {
+data+="<tr><td>"+array[i].num1+"</td>"+"<td>"+array[i].num2+"</td>"+"<td>"+array[i].result+"</td></tr>"
+ }
+document.getElementById("display").innerHTML=data;
+  }
+  function goclose(){
+  window.close();
+}
+</script>
+</body>
+</html><!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
 <style>
     .table{
@@ -14,7 +72,7 @@ border: 3px solid red;
 </style>    
 </head>
 
-<body>
+<body> -->
     <!-- <p id="demo"></p>
     <button type="button" onclick='document.getElementById("demo").innerHTML = "Welcome To my page"'>Change text</button>
     <button type="button" onclick='document.getElementById("demo").style.color= "Red"'>Change color</button>
@@ -172,12 +230,13 @@ document.getElementById('padded').innerHTML = textvalue.charAt(5    );
 
 </script>     -->
 
-<p id="tabledemo"></p>
+<!-- <p id="tabledemo"></p>
 <p id="timepass"></p>
 <p id="tableoftwo"></p>
 <p id="tableofthree"></p>
-
+<p id="callback1"></p>
 <script>
+
 
     const states = ["Fruits", "Vegies", "Stuff"];
 
@@ -230,6 +289,30 @@ function functiontwo(value, index, array){
 }
 document.getElementById('tableoftwo').innerHTML = numberone;
 document.getElementById('tableofthree').innerHTML = numbertwo;  
+
+// Callback
+
+let a = 2;
+let b = 5;
+function functionsum(result){
+
+    document.getElementById('callback1').innerHTML = result;
+}
+
+function forsum(){
+
+    functionsum(a + b);
+}
+
+ function formul(){
+
+    functionsum((a + b) * 3);
+ }
+
+
+ forsum();
+ formul();
+
 </script>
 
 
@@ -237,4 +320,4 @@ document.getElementById('tableofthree').innerHTML = numbertwo;
 
 
 </body>
-</html>
+</html> -->

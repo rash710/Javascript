@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 9</title>
+</head>
+<body>
+    
+    <p id="theinput"></p>
+    <p id="newpromise"></p>
+
+<script>
+
+ var x = prompt('Eneter The Value');
+        
+  document.getElementById('theinput').innerHTML ="The input is:" + x;
+ 
+  var promise = new Promise(function(resolve,reject){
+   
+     
+     setTimeout(function(){
+        if(typeof x === "string" || x instanceof String){
+         resolve();
+     }
+     else{
+         reject();
+     }
+     },500)
+     
+  })
+
+  promise.
+  then(function (){
+     document.getElementById('newpromise').innerHTML = "The Promise resolve with: " + x;
+  }).
+  catch(function (){
+     document.getElementById('newpromise').innerHTML = "Wrong Input" + x;
+  })
+</script>    
+</body>
+</html>
