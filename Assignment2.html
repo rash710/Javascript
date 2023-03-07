@@ -5,42 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 2</title>
+<style>
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 100px;
+    }
+    input{
+        width: 200px;
+        height: 50px;
+    }
+    button{
+        width: 30%;
+        padding: 10px;
+    }
+</style>    
 </head>
 <body>
     <form>
 
-        <label for="date">Enter Date:</label>
+        <div>
+            <label for="date">Enter Date:</label>
         <input type="text" id="date"><br>
+        </div>
 
         <p id="showme"></p>
         <button type="button" onclick="return check()">Submit</button>
     </form>
-
-
-
-
-   <!-- <ul>
-    <li>
-        <select>
-            <option id="guj">Gujarat</option>
-            <option id="maha">Maharastra</option>
-            <option id="up">Uttar Pradesh</option>
-            <option id="raj">Rajasthan</option>
-        </select>
-    </li>
-   </ul>
-
-   <ul>
-    <li>
-        <select id="guj1">
-            <option>Ahmedabad</option>
-            <option>surat</option>
-            <option>Gandhinagar</option>
-            <option>Jamnagar</option>
-            <option>Anand</option>
-        </select>
-    </li>
-   </ul> -->
 <script type="text/javascript">
 
 
@@ -53,76 +45,45 @@
 
  let month = array1[0];
  let day = array1[1];
-        // if(array1[2].length == 4)
-        // {
-        //  alert('succeed');
-        // }
-        // else{
-        //  alert('error');
-        // }
-        if(month <= 12 && month > 0)
+ let year = array1[2];
+
+ 
+ 
+
+ let daysare = [31,28,31,30,31,30,31,31,30,31,30,31]
+ 
+         if(year.length > 4)
+         {
+         alert('Year /must be in 4 digit');
+         }
+         if(month > 12){
+            alert('Month Should be lower than 12')
+         }
+        if(month == 1 || month > 2)
         {
-         alert('succeed');
-        }
-        else{
-         alert('error');
-        }
+            if(day > daysare[month-1]){ 
 
-        // if(month = 1,3,5,7,8,10,12){
-
-        //     day <= 31;
-        //     alert('error');
-        // }
-        // else
-        // {
-        //     day <=30;
-        // }
-        // if(1 <= array1[2].value <= 31)
-        // {
-        //  alert('succeed');
-        // }
-        // else{
-        //  alert('error');
-        // }
-
-
-            function formonthvalid(a,b,c,d,e,f,g,h){
-
-                    if(day >= 31){
-
-                        alert('error');
-                    }
+                    alert('Day must be less Than ' + daysare[month-1]);
                 
             }
-            formonthvalid(1,3,5,7,8,10,12);
+        }
+        if(month ==2){
+            var leapyear = false;
+            if ( (!(year % 4) && year % 100) || !(year % 400)) 
+                    {
+                        leapyear = true;
+                    }
+            if(leapyear == false && day >= 29){
 
- }
+                alert('Day must be less Than 28');
+            }
+            if(leapyear == true && day > 29){
 
-//   text = "";
-//      for(let i = 0; i < array1.length; i++){
-
-//          text += array1[i] + "<br>";
-
-//      }
-
-//      document.getElementById('showme').innerHTML = text;
-//  }
-//  let newdate = document.getElementById('date').value;
-
-//       function check(){
-
-//          if(newdate > new Date()){
-//              alert("Please enter valid date");
-//          }
-
-//          if(newdate <= new Date()){
-//              alert("Submited");
-//          }
-
-//       }
-
-
-
+                alert('Day must be less Than 29');
+                }
+        }
+       
+    }
 </script>    
     
 </body>
