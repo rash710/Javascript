@@ -42,7 +42,7 @@
                 <div><input type="radio" name="gender" id="female"><label class="h6" for="male">Female</label></div>
             </div>
         <label for="designation" class="h5 py-2">Designation</label>
-        <select class="form-control" id="select">
+        <select class="form-control" id="designation">
             <option>Select Designation</option>
             <option>Project Manager</option>
             <option>General Manager</option>
@@ -137,7 +137,7 @@
             }
              
             
-            if(select.options[0].selected == true){
+            if(designation.options[0].selected == true){
               blankdesi.setAttribute("class","error");
               document.getElementById('blankdesi').innerHTML = "Plese Select Designation";
             }
