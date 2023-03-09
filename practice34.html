@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Day 3 Practice 4</title>
+</head>
+<body>
+    <p id="show"></p>
+    <p id="show1"></p>
+ <script type="text/javascript">
+
+const employee = {
+    details : function(){
+      return  this.Name + " " + this.Address + " " + this.Designation;
+    }
+}
+
+const employee1 = {
+    Name : "Rashmi",
+    Address : "Maninagar",
+    Designation: "Trainee"
+}
+
+const employee2 = {
+    Name : "Shreeja",
+    Address : "Maninagar",
+    Designation: "ABC"
+}
+
+
+
+
+document.getElementById('show').innerHTML = employee.details.call(employee1);
+document.getElementById('show1').innerHTML = employee.details.call(employee2);
+
+
+ </script>
+
+</body>
+</html>

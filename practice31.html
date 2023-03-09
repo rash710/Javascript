@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Day 3 Practice 1</title>
+    <style>
+        input{
+            width: 500px;
+            height: 50px;
+        }
+        button{
+            padding: 20px;       
+         }
+    </style>
+</head>
+<body style="margin:100px;">
+    <input type="number" placeholder="Eneter the radius:" id="radius"><br><br>
+    <button type="submit" onclick="area()">Show</button>
+    <p id="result"></p>
+<script>
+    function area(){
+        var r = document.getElementById('radius').value;
+    function displayresult(c){
+
+        document.getElementById('result').innerHTML = c;
+    }
+    function araecircle(){
+        
+        return area = r * r * 3.14;
+    }
+
+let result = araecircle();    
+displayresult(result);
+
+}
+</script>    
+</body>
+</html>
