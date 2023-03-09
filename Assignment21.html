@@ -23,17 +23,17 @@
   </header>
   <main class="m-3">
     <div class="container border border-2">
-    <form class="p-2"> 
+    <form class="p-2" id="mainform"> 
         <label class="h5 py-2">Employee ID:</label>
-        <input type="text" class="form-control" id="empid">
+        <input type="text" class="form-control" id="empid" required>
         <p id="blankid"></p><p id="iderror"></p>
 
         <label class="h5 py-2">Employee Name:</label>
-        <input type="text" class="form-control" id="empname">
+        <input type="text" class="form-control" id="empname" required>
         <p id="nameerror"></p>
 
         <label class="h5 py-2" for="age">Age:</label>
-        <input type="number" id="empage" class="form-control">
+        <input type="number" id="empage" class="form-control" required>
         <p id="blankage"></p><p id="ageerror"></p>
 
             <label class="h5 py-2">Gender:</label>
@@ -51,7 +51,7 @@
         </select>
         <p id="blankdesi"></p>
         <label for="salary" class="h5 py-2">Salary</label>
-        <input type="number" class="form-control" id="empsalary">
+        <input type="number" class="form-control" id="empsalary" required>
         <p id="blanksalary"></p>
        
 
@@ -71,57 +71,57 @@
           <div>
 
             <label for="location" class="h5 py-2">Date Of Joining</label>
-            <input type="date" class="form-control" id="empdate">
+            <input type="date" class="form-control" id="empdate" required>
             <p id="blankdate"><p id="dateerror"></p>
 
             <label for="email" class="h5 py-2">E-mail</label>
-            <input type="email" class="form-control" id="empemail">
+            <input type="email" class="form-control" id="empemail" required>
             <p id="blankmail"></p>
 
             <label for="cnumber" class="h5 py-2">Contact Number</label>
             <input type="number" class="form-control" id="cnumber" required>
 
             <div class="d-flex justify-content-center">
-                <button type="submit" onclick="funsubmit()" class="my-4 px-5">SUBMIT</button>
+                <input type="submit" onclick="funsubmit()" class="my-4 px-5" value="submit">
             </div>
     </form>
     </div>
     <p id="details"></p>  
     <p id="locationof"></p>
-<script type="text/javascript">
+ <script type="text/javascript">
 
         function funsubmit(){
             var x = document.getElementById('empid').value;
-            if(x == ""){
-              blankid.setAttribute("class","error");
-              document.getElementById('blankid').innerHTML = "Plese Eneter ID";
-            }
+            // if(x == ""){
+            //   blankid.setAttribute("class","error");
+            //   document.getElementById('blankid').innerHTML = "Plese Eneter ID";
+            // }
             if(x.length <= 5){
                 iderror.setAttribute("class","error");
                 document.getElementById('iderror').innerHTML = "ID Should be atleast 5 character long";
             }
 
             var name = document.getElementById('empname').value;
-            if(name == ""){
-              nameerror.setAttribute("class","error");
-              document.getElementById('nameerror').innerHTML = "Plese Eneter Name";
-            }
+            // if(name == ""){
+            //   nameerror.setAttribute("class","error");
+            //   document.getElementById('nameerror').innerHTML = "Plese Eneter Name";
+            // }
             var getage = document.getElementById('empage').value;
             
-            if(getage == ""){
-              blankage.setAttribute("class","error");
-              document.getElementById('blankage').innerHTML = "Plese Eneter Age";
-            }
+            // if(getage == ""){
+            //   blankage.setAttribute("class","error");
+            //   document.getElementById('blankage').innerHTML = "Plese Eneter Age";
+            // }
             if(getage < 18){
               ageerror.setAttribute("class","error");
               document.getElementById('ageerror').innerHTML = "Age Should be greater than 18";
             }
 
             var salry = document.getElementById('empsalary').value;
-            if(salry == ""){
-              blanksalary.setAttribute("class","error");
-              document.getElementById('blanksalary').innerHTML = "Plese Eneter Salary";
-            }
+            // if(salry == ""){
+            //   blanksalary.setAttribute("class","error");
+            //   document.getElementById('blanksalary').innerHTML = "Plese Eneter Salary";
+            // }
 
             const date = document.getElementById('empdate').value;
             
@@ -131,17 +131,16 @@
             }
 
             var email = document.getElementById('empemail').value;
-            if(email == ""){
-              blankmail.setAttribute("class","error");
-              document.getElementById('blankmail').innerHTML = "Plese Eneter E-mail Address";
-            }
+            // if(email == ""){
+            //   blankmail.setAttribute("class","error");
+            //   document.getElementById('blankmail').innerHTML = "Plese Eneter E-mail Address";
+            // }
              
             
-            if(designation.options[0].selected == true){
-              blankdesi.setAttribute("class","error");
-              document.getElementById('blankdesi').innerHTML = "Plese Select Designation";
-            }
-            
+            // if(designation.options[0].selected == true){
+            //   blankdesi.setAttribute("class","error");
+            //   document.getElementById('blankdesi').innerHTML = "Plese Select Designation";
+            // }
         }
         var stateObject = {
   Gujarat: ['Ahemedabad', 'Surat', 'Gandhinagar', 'Mahesana'],
@@ -162,11 +161,10 @@ window.onload = function () {
     }
   };
 };
+mainform.onsubmit = function (){
+  array=[];
 
-
-array=[];
-
-  var printid = document.getElementById('empid').value;
+var printid = document.getElementById('empid').value;
 var printname = document.getElementById('empname').value;
 var printage = document.getElementById('empage').value;
 var printgen = document.getElementById('empage').value;
@@ -174,7 +172,10 @@ var printgen = document.getElementById('empage').value;
 array.push({"id":printid});
 
 data = "<tr><td>Employee ID</td></tr>";
- console.log(array);
+ document.getElementById('details').innerHTML = array;
+}
+
+
  
 </script>
   </main>

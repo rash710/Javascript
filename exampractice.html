@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Practice</title>
+</head>
+
+<body>
+
+    <input type="text" id="first" placeholder="First number"><br>
+    <br>
+    <input type="text" id="second" placeholder="Second number">
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button><br><br><br>
+
+
+
+    <input type="text" id="date" placeholder="Enter Date">
+    <button type="submit" onclick="showdate()">SUBMIT</button>
+    <p id="show"></p>
+    <p id="table"></p>
+    <p id="error"></p>
+    <script>
+        //      function result(){
+
+        // array = [];
+        //         //debugger;
+        //     var a = parseInt(document.getElementById('first').value);
+        //     var b = parseInt(document.getElementById('second').value);
+
+        //     var sum = a + b;
+        //     document.getElementById('show').innerHTML = sum;
+
+        // array.push({"Number1":a, "Number2":b, "Result":sum});
+        // console.log(array);
+        // data = '<table><tr><td>Number1</td><td>Number2</td><td>Result</td></tr></table>';
+        // for(i = 0; i < array.length; i++){
+
+        //     data += "<tr><td>"+array[i].a + "</td>" +"<td>"+array[i].b + "</td>" +"<td>"+array[i].sum + "</td><tr>";
+        // }
+        // document.getElementById('table').innerHTML = data;
+        // }
+
+
+        // function showdate(){
+
+        // var x = document.getElementById('date').value;
+        // console.log(x);
+
+        // let datearray = x.split("-");
+        // console.log(datearray);
+
+        // data1 =  '<table><tr><td>Day</td><td>Month</td><td>Year</td></table>';
+
+        //     for(i = 0;i < datearray.length; i++){
+        //         data1 += "<tr><td>" + datearray[i] + "</td></tr>";
+        //     } 
+        //     document.getElementById('error').innerHTML = data1;
+        // }
+
+
+        // var m = parseInt(prompt('Eneter val1'));
+        // var n = parseInt(prompt('Eneter val1'));
+        // function functionsum(result){
+        //     console.log(result);
+        // }
+
+        //     function dosum(){
+        //         return p = m + n;
+        //     }
+
+
+        // let result1 = dosum();
+        // functionsum(result1);
+
+
+
+
+        //     const person = {
+        //     fullname: function(){
+        //         return this.firstname + " " + this.secondname;
+        //     }
+        // }
+
+        // const person1 = {
+        //     firstname: "Rashmi",
+        //     secondname: "Parmar",
+        // }
+
+        // console.log(person.fullname.apply(person1));
+
+        const objstore = { "products" : [{ "Name": "Cheese", "Price" : 2.50, "Location": "Refrigerated foods" }, { "Name": "Crisps", "Price" : 3, "Location": "the Snack isle" }, { "Name": "Pizza", "Price" : 4, "Location": "Refrigerated foods" }, { "Name": "Chocolate", "Price" : 1.50, "Location": "the Snack isle" } ]}
+
+        localStorage.setItem("object1", objstore);
+        console.log(objstore);
+    </script>
+</body>
+
+</html>
