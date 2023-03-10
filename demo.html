@@ -54,9 +54,51 @@ document.getElementById("display").innerHTML=data;
   function goclose(){
   window.close();
 }
+
+
+
+let callbakfun = (p , q , callback) => {
+
+    return callback(p , q);
+}
+
+
+let sumres = callbakfun(5, 6, function result(a, b){
+    return a + b;
+});
+
+setTimeout(function(){
+    console.log(sumres);
+},1000)
+
+function mulres(a, b){
+    return a * b;
+}
+let multipy = callbakfun(5, 6, mulres)
+console.log(multipy);
 </script>
 </body>
-</html><!-- <!DOCTYPE html>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

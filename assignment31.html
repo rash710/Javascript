@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <div class="row gap-5 justify-content-between mt-2 mx-5">
+        
+            <div class="col card">
+                <div class="card-header">
+                    <h6>Name: <span id="name">Cheese</span></h6>
+                    <p>Price: <span id="price">2.50</span></p>
+                    <p>Location : <span id="loc">Refrigerated foods</span></p>
+                    <button type="button" onclick="addtocart()">Add to cart</button>
+                </div>
+            </div>
+        
+            <div class="col card">
+                <div class="card-header">
+                    <h6>Name: <span id="name1">Crisps</span></h6>
+                    <p>Price: <span id="price1">3</span></p>
+                    <p>Location : <span id="loc1">the Snack isle</span></p>
+                    <button type="button" onclick="addtocart1()">Add to cart</button>
+                </div>
+            </div>
+            <div class="col card"></div>
+            <div class="col card"></div>
+    </div>
+    <div class="row">
+        <div class="justify-item-center">
+            <button class="button" onclick="showdata()">SUMMARY</button>
+        </div>
+    </div>
+    </div>
+    <p id="table"></p>
+  </main>
+  <script>
+    function addtocart(){
+        var Name = document.getElementById('name').innerHTML;
+        var Price = document.getElementById('price').innerHTML;
+        var Location = document.getElementById('loc').innerHTML;
+    var productobject = {
+        product: {Name, Price, Location}
+    }
+    localStorage.setItem("productobject", productobject);
+    console.log(productobject);
+    data = '<table><tr><td style="width:100px;">Name</td><td style="width:100px;">Price</td><td style="width:100px;">Location</td></tr></table>'
+    data += "<table>" + "<tr>" + "<td style='width:100px;'>" + Name + "</td>" + "<td style='width:100px;'>" + Price + "</td>" + "<td style='width:100px;'>" + Location + "</td>" + "</tr>" + "<table>"
+    document.getElementById('table').innerHTML = data;
+}
+function addtocart1(){
+        var Name = document.getElementById('name1').innerHTML;
+        var Price = document.getElementById('price1').innerHTML;
+        var Location = document.getElementById('loc1').innerHTML;
+    var productobject1 = {
+        product: {Name, Price, Location}
+    }
+    localStorage.setItem("productobject1", productobject1);
+    console.log(productobject1);
+}
+function showdata(){
+    console.log(productobject);
+}
+  </script>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

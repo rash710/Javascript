@@ -1,19 +1,17 @@
- const startinghousrs = 3;
- let time = startinghousrs * 3600;
-
- const timerstart = document.getElementById('countdown');
+  const startinghousrs = 3;
+  let time = startinghousrs * 3600;
 
  setInterval(updatecountdown, 1000);
 
  function updatecountdown(){
-     const hours = Math.floor(time / 3600);
-     const minutes = Math.floor((time % 3600) / 60);
-     const seconds = time % 60;
+     const H = Math.floor(time / 3600);
+     const M = Math.floor((time % 3600) / 60);
+     const S = time % 60;
 
-     timerstart.innerHTML = `${hours}: ${minutes}: ${seconds}`;
+     document.getElementById('countdown').innerHTML = `${H}: ${M}: ${S}`;
      time--;
 
-     if(hours == 0 && minutes == 0 && seconds == 0){
+     if(H == 0 && M == 0 && S == 0){
         window.close();
      }
  }

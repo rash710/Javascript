@@ -7,21 +7,20 @@
     <title>Day 2 Practice 1</title>
 </head>
 <body>
-    <p id="result"></p>
-
-<script type="text/javascript">
- var x = parseInt(prompt('Eneter the value:'));
-  function showresult(resultis){
-     document.getElementById('result').innerHTML = resultis;
-  }
+    <h3>Sqaure of given number is</h3>
+    <h4 id="result"></h4>
  
-  function dosqaure(){
-     var y = x * x;
-     return y;
-  }
+<script type="text/javascript">
+var y = parseInt(prompt('Enter the value:'));
+    const square = (x , callback) => {
 
-  let result = dosqaure();
- showresult(result);
+        return callback(result);
+    }
+
+    square(y ,function () {
+        document.getElementById('result').innerHTML = y*y;
+    })
+    
 
 </script>
 
