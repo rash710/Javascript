@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hands on practice</title>
+<style>
+    .blue{
+        color:blue;
+    }
+</style>    
 </head>
 <body>
-    
+    <div id="result"></div>
+    <div id="result1"></div><br><hr><br>
+    <button type="button">Click Me!</button>
 <script type="text/javascript">
-             //debugger;                                                                // Array Destructuring
+             //debugger;                           
+                                                                         //LET VAR CONST
+    //difine                                                                         
+    var a = "Good";
+    console.log(a);
+    //update
+    a = "Morning";
+    console.log(a);
+    //Redifine
+    var a = 100;
+    console.log(a);
+             
+    //difine       
+    let amount = 100;
+    console.log(amount);
+    //Update
+    amount = 200;
+    console.log(amount);//let variables can't be reifine
+
+    const total = 100;
+    console.log(total);//const variable can't be update and redifine
+
+
+                                                                          // Array Destructuring
     const course = ["dotnet","java","python"]
 
     const dotnet = course[0];
@@ -20,10 +50,22 @@
 
     const flowers = ["Rose","Lotus","Lily"];
 
-    const [Rose, Lotus, Lily] = flowers;
+    const [Rose, Lotus, Lily, Mogara] = flowers;
 
-    console.log(Rose, Lotus, Lily);
-    // If will add  the Element which is not in aaray than it'll show undefined
+    console.log(Rose, Lotus, Lily, Mogara);
+
+    
+    const boject = {Prouct: 'cheese',
+                    Price : 60,
+                    Location : 'Ahmedaabd'}
+    
+    const {Prouct,Price,Location} = boject;
+
+    console.log(Prouct,Price,Location);
+
+
+
+    // If will add  the Element which is not in aaray than it'll show undifined, In above mogara is not in array it will show undefined.
     
 
                                                                                   // Swap Variable
@@ -67,11 +109,129 @@ const stuff = {
     }
     showstuff(stuff);
 
-var number = 100;
-console.log(number);
+                                                                                //Function Scoped VS
+    //let, const - blocked scope  {} - anything within {}
+    // var is a function scoped
+    
+    var number = 100;
 
-var number = 200;
-console.log(number);
+    function  greet(){
+        var random = "hello!"
+        console.log(random + " " + number);
+    }
+    greet();
+    // console.log(random + " " + number); this will throw the error  
+
+    var total1 = 1000;
+    var test = true;
+
+    if(test){
+        var total1 = 'Hey!'
+        console.log("Welcome!");
+    }
+console.log(total1);
+
+let total2 = 2000;
+let test1 = true;
+
+if(test1){
+    //Local scope
+    let total2 = "World";
+    console.log("Welcome to my page...");
+}
+console.log(total2);
+                                                                            //Tamplate sTrings String
+const name = "Rashmi";                                                                          
+const sname = "Parmar";
+const age = 25;
+
+const fullname = "My Full Name is" + " " + name + " " + sname + " and I am " + age + " years old.";
+console.log(fullname);
+
+const fullname1 = `My Full Name is ${name.toUpperCase()}  ${sname.toUpperCase()} and i'm ${age * 2} years old`
+console.log(fullname1);
+
+                                                                            //Tamplate String Dynamic
+ const person = {
+     name: "david",
+     sanme: "Watson",
+     hobbies: ["Playing","Cooking","Ridding"]
+ }                                           
+ const result = document.getElementById("result");
+
+ result.innerHTML = `<h2>${person.name}</h2>
+ <p>${person.sanme}</p>
+ <ul>${person.hobbies.map(item => {
+     return `<li>${item}</li>`;
+ }).join("")}</ul>
+ `;
+                                                                            //Tagged Tamplate Literals
+const author = "Someone";
+const statement = "Something";
+
+const quote = heighlight`Here is the ${statement} by ${author} and it is false.`;
+
+console.log(quote);
+const result1 = document.getElementById('result1');
+result1.innerHTML = quote;
+
+// function heighlight(text, arg1, arg2){
+//         console.log({text, arg1, arg2});
+// }  this one is for a new argument for all the argument in string 
+
+function heighlight(text,...vars){
+    const awesometext =  text.map((item,index) =>{
+            return `${item} <strong class="blue">${vars[index] || ""}</strong>`;
+
+    });
+    return awesometext.join("");
+}
+
+                                                                            //Arrow Function
+    function name1(){
+        console.log("hello");
+    }                                                                        
+    name1();
+
+    function name2(t){
+
+        console.log(t);
+    }
+    name2("rashmi");
+
+    function triple(value1, value2,){
+        return value1 * value2 * 3;
+    }
+    triple(1,2);
+
+    
+    const sayhi = () => console.log("Hello");
+    sayhi();    
+
+    
+    const double = value => value * 3;
+    const num = double(10);
+    console.log(num);
+    
+    const multipy1 = (num1, num2) => {
+        var mulresult = num1 * num2;
+
+        return mulresult;
+    }
+
+    const receive = multipy1(4,5);
+    console.log(receive);
+//Return Object
+    const object2 = () => ({name: "john", age : 20});
+
+    const getresult = object2();
+    console.log(getresult);
+//arrow function as callback function
+
+const numbers = [1,2,3,4,5,6,7,8]
+
+const big = numbers.filter(number => number > 4)
+console.log(big);
 </script>
 </body>
-</html>
+</html> 
