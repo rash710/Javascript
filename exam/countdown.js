@@ -1,19 +1,18 @@
-  const startinghousrs = 3;
-  let time = startinghousrs * 3600;
+ // const startinghousrs = 3;
+  let time = '';
 
- setInterval(updatecountdown, 1000);
+ setInterval(updatecountdown, 20);
 
  function updatecountdown(){
-     const H = Math.floor(time / 3600);
+    // const H = Math.floor(time / 3600);
      const M = Math.floor((time % 3600) / 60);
      const S = time % 60;
-
-     document.getElementById('countdown').innerHTML = `${H}: ${M}: ${S}`;
-     time--;
-
-     if(H == 0 && M == 0 && S == 0){
-        window.close();
-     }
+     
+     document.getElementById('countdown').innerHTML = `${M}: ${S}`;
+    if(M === 1){
+      window.close();
+    }
+     time++;
  }
 
  window.onload = function(){

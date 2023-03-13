@@ -14,9 +14,10 @@
     {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
+        justify-items: center;
+        justify-content: space-between;
         gap: 10px;
-
-
     }
 </style>
 </head>
@@ -42,28 +43,20 @@ fetch("./practice37.json", requestOptions)
 
 
 data= '<table><tr><td style="width:150px;">Name</td><td style="width:150px;">Price</td><td style="width:150px;">Location</td></tr></table>'
-function call(data){
-    // const array = Object.keys(Productsare.products);
-    //     console.log(array);
-    // for(i = 0; i < array.length; i++){
-    //     data +=  "<table>" + "<tr>" + "<td style='width:150px;'>" + array[i].Name + "</td>" + "<td style='width:150px;'>" + array[i].Price + "</td>" + "<td style='width:150px;'>" + array[i].Location + "</td>" + "</tr>" + "</table>";
-    //     document.getElementById('show').innerHTML = data;
-    //}
-    
+function call(data){    
     var array =  JSON.parse(data);
-    text = "";//'<table><tr><td style="width:150px;">Name</td><td style="width:150px;">Price</td><td style="width:150px;">Loaction</td></tr></table> <br>'
+    text = "";
     for (let i = 0;i < array.products.length; i++){
-        // text += "<table>" + "<tr>" + 
-        //     "<td style='width:150px;'>" + array.products[i].Name + "</td>" +
-        //     "<td style='width:150px;'>" + array.products[i].Price + "</td>" + 
-        //     "<td style='width:150px;'>" + array.products[i].Location + "</td>" + 
-        //     "</tr>" +"</table>";
-
-        text += "<div class='flex1'>" + "<div class='back'>" +"<p>" + array.products[i].Name + "<p>" + "<p>" + array.products[i].Price + "<p>" + "<p>" + array.products[i].Location + "<p>" + "<button>" + "Add To Cart" + "</button>" + "</div>" + "</div>";
-    } 
+        text += "<table>" + "<tr>" + 
+             "<td style='width:150px;'>" + array.products[i].Name + "</td>" +
+             "<td style='width:150px;'>" + array.products[i].Price + "</td>" + 
+             "<td style='width:150px;'>" + array.products[i].Location + "</td>" + 
+             "</tr>" +"</table>";
+    }
     document.getElementById('show').innerHTML = text;
 }
-  
+
+ 
 </script>
 </body>
 </html>

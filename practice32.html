@@ -13,26 +13,21 @@
     </style>
 </head>
 <body>
-    <input type="number" placeholder="Eneter Length" id="rl"><br><br><br>
-    <input type="number" placeholder="Eneter Breadth" id="bl"><br><br><br>
-
     <p id="result"></p>
 
 
     <script>
-let x = document.getElementById('rl').value;
-let y = document.getElementById('bl').value;
-        function area(length,breadth){
+ 
+function consr(length,breadth){
 
-            let result = length * breadth;
-            document.getElementById('result').innerHTML = result;
-            
-        }
+    this.x = length;
+    this.y = breadth;
 
-const new1 = area(4 ,5);
+}
 
-
-
+const araea = new consr(5 ,6);
+var m = araea.x * araea.y
+document.getElementById('result').innerHTML = m;
 
     </script>
 </body>

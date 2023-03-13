@@ -28,6 +28,17 @@
 <input type="button" value="Back" onclick="goBack()">
 <input type="button" value="close" onclick="goclose()">
 
+<input type="number" placeholder="Enter" id="area">
+<button type="button" onclick="areaofcircle()">OK</button><br><br><br>
+
+<select id="state">
+    <option selected>Select State</option>
+</select>
+<select id="city">
+    <option selected>Select City</option>
+</select>
+
+<h1 id="stop"></h1>
 <script>
     function goBack() {
   window.history.back()
@@ -76,6 +87,80 @@ function mulres(a, b){
 }
 let multipy = callbakfun(5, 6, mulres)
 console.log(multipy);
+
+
+//  var l = parseInt(prompt('Eneter'))
+function diswatre(j , callbavk){
+    return callbavk ();
+}
+
+
+// diswatre(l, function(){
+//     var h =  l*l;
+//     console.log(h);
+// })
+
+
+function areaofcircle(){
+    var p = document.getElementById('area').value;
+    console.log(p * p * 3.14);
+}
+
+
+const drop = {
+    gujarat : ['ahm', 'surt', 'nadiad'],
+    rajstah : ['udaipur','jaipur']
+}
+
+window.onload = function (){
+
+var stateis = document.getElementById('state');
+var cityis = document.getElementById('city');
+
+for(var x in drop){
+    stateis.options[stateis.options.length]  = new Option(x , x);
+}
+}
+
+
+function callre (x ,y, callback){
+    return callback(x,y);
+}
+function resulta(a,b){
+
+    return a*b;
+
+}
+const arrea =  callre(3,4, resulta)
+console.log(arrea);
+
+const objectof = {
+    name : "rashmi",
+    lname : "shreeja"
+}
+data = '';
+
+const array6 = [objectof];
+
+
+
+console.log(array6);
+text = '';
+for(i = 0; i < array6.length; i++){
+
+    text += array6[i];
+    console.log(text);
+}
+
+
+const time  = '';
+setInterval(calfun , 500)
+
+function calfun(){
+    S = Math.floor()
+    document.getElementById('stop').innerHTML = `${M}:${S}`;
+    time++;
+}
 </script>
 </body>
 </html>
