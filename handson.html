@@ -14,7 +14,15 @@
 <body>
     <div id="result"></div>
     <div id="result1"></div><br><hr><br>
-    <button type="button">Click Me!</button>
+    <button type="button" class="btn">Click Me!</button>
+
+
+    <div id="showcase"></div>
+
+    <h1>HTML</h1>
+    <h1>CSS</h1>
+    <h1>JAVASCRIPT</h1>
+    <div id="showcase1"></div>
 <script type="text/javascript">
              //debugger;                           
                                                                          //LET VAR CONST
@@ -232,6 +240,144 @@ const numbers = [1,2,3,4,5,6,7,8]
 
 const big = numbers.filter(number => number > 4)
 console.log(big);
+
+                                                                                //Arrow Function This
+const bob = {
+    fname : "ABC",
+    lname :"XYZ",
+    sayname :  function () {
+        console.log(this);
+        console.log(`Hello ! ${this.fname} ${this.lname}`);
+    }
+}                         
+bob.sayname();   
+
+const anna = {
+    fname : "rash",
+    lname : "Shree",
+    saynames : function (){
+        const self = this;
+        console.log(this);
+        
+        setTimeout(() => {
+            console.log(self);
+            console.log(self.fname);    
+        }, 2000);
+        
+    }
+}
+anna.saynames();
+
+const btn = document.querySelector('.btn');
+
+btn.addEventListener("click", function(){
+    console.log(this);
+    this.style.color = red;
+})
+
+
+                                                                                    //Default Parameters
+const john = "john";
+const peter = "peter";
+
+function saysomething(person = 'Susan'){
+    console.log(`Hello ${person}`);
+}
+
+saysomething();
+
+const hellojohn = (person) => {
+    console.log(`Hello ${person}`);
+}
+hellojohn(john);
+                                                                                //New String Methods
+
+const man = 'Peter Smith';
+const employee = '2365899-EMP-PETER-SMITH';
+const manager = '26559-MAN-JOHN-DOE';
+
+console.log(man.startsWith("Pe"));
+console.log(employee.startsWith("pe"));
+
+console.log(employee.startsWith("EMP",8));//the second parameter is for starting point
+
+console.log(manager.endsWith("DOE"));
+console.log(manager.endsWith("MAN", 9));
+
+console.log(employee.includes("peter")); // case sensitive so it will return false
+
+const multipypeople = (man , amount = 6) => man.repeat(amount);
+
+const people = multipypeople(man);
+console.log(people);
+
+
+
+                                                                                //For Of Loop
+
+const fruits = ['apple','mango','banana','kiwi','grapes'];
+const longname = "Hi My Name Is Rashmi";
+const shortname = '';
+
+// for(const p of longname){
+//     console.log(p);
+// }
+
+// for(const letter of longname){
+
+//     if(letter === ' '){
+//         continue;
+//     }
+//     else{
+//         shortname += letter;
+//     }
+// }
+// console.log(shortname);
+datas = "";
+for(const x of fruits){
+    if(x === 'kiwi'){
+        break; //continue;
+    }
+    datas += x + "<br>";
+    document.getElementById('showcase').innerHTML = datas;
+}
+                                                                            //Spread Operators Basics
+const udemy = 'udemy';
+const letters = [...udemy];
+console.log(letters);
+
+const boys = ['john','peter', 'bob'];
+const girls = ['susan','anna'];
+const bestfriend = 'arnold';
+
+const friend = [...boys, ...girls, bestfriend];
+console.log(friend);
+
+//const newfriend = friend;
+
+const newfriend = [...friend];
+newfriend[0] = 'karina';
+console.log(newfriend);
+console.log(friend);
+                                                                            //Spread Operators With
+const newperson = {name : "Rashmi", job : "Developer"};
+
+//const newperson1 = {...newperson};
+const newperson1 = {...newperson, city : "Chicago", name : "Shreeja"};
+console.log(newperson1);
+console.log(newperson);
+
+                                                                            //Spread Operator With
+ 
+const headings = document.querySelectorAll('h1');
+const result8 = document.getElementById('showcase1');
+
+const heading = [...headings].map(item => `<span>${item.textContent}</span>`)
+.join('');
+result8.innerHTML = heading;
+
+
+console.log(Math.max(1,4,78,45,68,98));
 </script>
-</body>
+</body> 
 </html> 
